@@ -9,7 +9,7 @@
 	<Model>
 		<Params ForceX="0.0001"/>
 		<Params omega="1.0"/>
-		<RemoteForceInterface Iterations="10000" particle="NRotSphere">
+		<RemoteForceInterface Iterations="1000000" particle="NRotSphere">
 normalK = 1e-6;
 geoRandomBlock = RandomBoxPacker(
 	minRadius = 4.0000,
@@ -79,12 +79,12 @@ sim.createCheckPointer (
 		fileNamePrefix = "flow_data",
 		beginTimeStep = 0,
 		endTimeStep = 10000000,
-		timeStepIncr = 100
+		timeStepIncr = 1000
 		)
 	)
 		</RemoteForceInterface>
 	</Model>
 	<VTK/>
-	<VTK Iterations="100" what="U,Solid"/>
-	<Solve Iterations="10000"/>
+	<VTK Iterations="1000" what="U,Solid"/>
+	<Solve Iterations="1000000"/>
 </CLBConfig>
