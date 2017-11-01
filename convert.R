@@ -8,7 +8,7 @@ Lz=64
 g = readSTL("os_test1.b.stl",plot=FALSE)
 
 g %>% triangles3d()
-writeSTL("test.stl")
+writeSTL("os_test1.b.stl")
 cube3d() %>% translate3d(1,1,1) %>% scale3d(Lx/2,Ly/2,Lz/2) %>% shade3d(col=2,alpha=0.5)
 snapshot3d("test.png")
 writeWebGL("html")
