@@ -7,10 +7,10 @@
 		</Wall>
 	</Geometry>
 	<Model>
-		<Params ForceX="0.0001"/>
+		<Params ForceY="0.0001"/>
 		<Params omega="1.0"/>
-		<RemoteForceInterface Iterations="10000" particle="NRotSphere">
-normalK = 1e-6;
+		<RemoteForceInterface Iterations="20000" particle="NRotSphere" verletDist="0.7" gridSpacing="38">
+normalK = 3;
 geoRandomBlock = RandomBoxPacker(
 	minRadius = 4.0000,
 	maxRadius = 15.0000,
@@ -57,12 +57,12 @@ sim.createInteractionGroup (
 	)
 
 #specify the direction and magnitude of gravity:
-sim.createInteractionGroup (
-	GravityPrms (
-		name = "gravity",
-		acceleration = Vec3(0.0000, 1e-9, 0.0000)
-		)
-	)
+#sim.createInteractionGroup (
+#	GravityPrms (
+#		name = "gravity",
+#		acceleration = Vec3(0.0000, 1e-9, 0.0000)
+#		)
+#	)
 
 #add viscosity to damp particle oscillations:
 sim.createInteractionGroup (
@@ -78,13 +78,13 @@ sim.createCheckPointer (
 	CheckPointPrms (
 		fileNamePrefix = "flow_data",
 		beginTimeStep = 0,
-		endTimeStep = 10000000,
+		endTimeStep = 20000,
 		timeStepIncr = 100
 		)
 	)
 		</RemoteForceInterface>
 	</Model>
 	<VTK/>
-	<VTK Iterations="100" what="U,Solid"/>
-	<Solve Iterations="10000"/>
+	<VTK Iterations="20000" what="U,Solid"/>
+	<Solve Iterations="20000"/>
 </CLBConfig>

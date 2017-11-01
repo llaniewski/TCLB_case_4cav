@@ -18,7 +18,7 @@ verletDist = 0.1000
 )
 
 #specify the number of timesteps and the timestep increment:
-sim.setNumTimeSteps (1000000)
+sim.setNumTimeSteps (10000)
 sim.setTimeStepSize (1)
 
 #specify the spatial domain for the simulation:
@@ -94,8 +94,8 @@ sim.createCheckPointer (
 	CheckPointPrms (
 		fileNamePrefix = "flow_data",
 		beginTimeStep = 0,
-		endTimeStep = 10000000,
-		timeStepIncr = 10000
+		endTimeStep = 10000,
+		timeStepIncr = 100
 		)
 	)
 
